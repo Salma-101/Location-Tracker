@@ -1,0 +1,54 @@
+:root {
+    /* CSS HEX */
+    --cool-gray: #a2a3bbff;
+    --blue-violet: #893bdfff;
+    --periwinkle: #b3b7eeff;
+    --black: #000000ff;
+    --ghost-white: #fbf9ffff;
+
+    /* typography */
+    --ff-oswald: 'Oswald', sans-serif;
+    --ff-inter: 'Inter', sans-serif;
+    --ff-roboto: 'Roboto', sans-serif;
+
+    /* CSS HSL
+    --cool-gray: hsla(238, 16%, 68%, 1);
+    --blue-violet: hsla(269, 72%, 55%, 1);
+    --periwinkle: hsla(236, 63%, 82%, 1);
+    --black: hsla(0, 0%, 0%, 1);
+    --ghost-white: hsla(260, 100%, 99%, 1);
+
+    /* SCSS HEX
+    $cool-gray: #a2a3bbff;
+    $blue-violet: #893bdfff;
+    $periwinkle: #b3b7eeff;
+    $black: #000000ff;
+    $ghost-white: #fbf9ffff;
+
+    /* SCSS HSL
+    $cool-gray: hsla(238, 16%, 68%, 1);
+    $blue-violet: hsla(269, 72%, 55%, 1);
+    $periwinkle: hsla(236, 63%, 82%, 1);
+    $black: hsla(0, 0%, 0%, 1);
+    $ghost-white: hsla(260, 100%, 99%, 1);
+
+    /* SCSS RGB
+    $cool-gray: rgba(162, 163, 187, 1);
+    $blue-violet: rgba(137, 59, 223, 1);
+    $periwinkle: rgba(179, 183, 238, 1);
+    $black: rgba(0, 0, 0, 1);
+    $ghost-white: rgba(251, 249, 255, 1);
+
+    /* SCSS Gradient
+    $gradient-top: linear-gradient(0deg, #a2a3bbff, #893bdfff, #b3b7eeff, #000000ff, #fbf9ffff);
+    $gradient-right: linear-gradient(90deg, #a2a3bbff, #893bdfff, #b3b7eeff, #000000ff, #fbf9ffff);
+    $gradient-bottom: linear-gradient(180deg, #a2a3bbff, #893bdfff, #b3b7eeff, #000000ff, #fbf9ffff);
+    $gradient-left: linear-gradient(270deg, #a2a3bbff, #893bdfff, #b3b7eeff, #000000ff, #fbf9ffff);
+    $gradient-top-right: linear-gradient(45deg, #a2a3bbff, #893bdfff, #b3b7eeff, #000000ff, #fbf9ffff);
+    $gradient-bottom-right: linear-gradient(135deg, #a2a3bbff, #893bdfff, #b3b7eeff, #000000ff, #fbf9ffff);
+    $gradient-top-left: linear-gradient(225deg, #a2a3bbff, #893bdfff, #b3b7eeff, #000000ff, #fbf9ffff);
+    $gradient-bottom-left: linear-gradient(315deg, #a2a3bbff, #893bdfff, #b3b7eeff, #000000ff, #fbf9ffff);
+    $gradient-radial: radial-gradient(#a2a3bbff, #893bdfff, #b3b7eeff, #000000ff, #fbf9ffff);
+    */
+}
+

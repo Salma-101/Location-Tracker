@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Map with Search Bar</title>
+    <link rel="stylesheet" href="Search-NewDesHome.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"> <!-- Include Font Awesome -->
+</head>
+<body>
+    <div class="header">
+        <image src="TrackerBuddy-removebg-preview.png" class="logo" width="80%"/>
+        <button id="profile-button">Profile</button>
+        <div class="search-bar">
+            <input type="text" id="search-input" placeholder="Search">
+            <button id="search-button"><i class="fas fa-search"></i></button> <!-- Font Awesome Search Icon -->
+        </div>
+        <button id="signout-button">Sign Out</button>
+    </div>
+
+    <div class="map-container">
+        <div class="map" id="map"></div>
+        <div class="button-container">
+            <button id="devices-button">My Devices</button>
+            <button id="faqs-button">FAQs</button>
+            <button id="emergency-button">Emergency Contacts</button>
+            
+        </div>
+    </div>
+
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+    <script src="https://unpkg.com/leaflet-geosearch/dist/geosearch.umd.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Initialize the map with Bangalore coordinates
+            var map = L.map('map').setView([12.8615, 77.6647], 10); // Coordinates for Bangalore, India
+
+            // Add OpenStreetMap tiles
+            L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                maxZoom: 19,
+                attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+            }).addTo(map);
+
+            // Add a marker at Bangalore coordinates
+            var marker = L.marker([12.8615, 77.6647]).addTo(map)
+                .bindPopup('Bangalore, India')
+                .openPopup();
+
+            // Set up Geocoding
+            const { GeoSearchControl, OpenStreetMapProvider } = window.GeoSearch;
+            const provider = new OpenStreetMapProvider();
+
+            // Search button click event
+            document.getElementById('search-button').addEventListener('click', function() {
+                const searchText = document.getElementById('search-input').value;
+
+                provider.search({ query: searchText }).then(results => {
+                    if (results.length > 0) {
+                        const result = results[0];
+                        map.setView([result.y, result.x], 13); // Zoom to the result
+                        marker.setLatLng([result.y, result.x]).bindPopup(result.label).openPopup();
+                    } else {
+                        alert('Location not found');
+                    }
+                }).catch(err => {
+                    console.error(err);
+                    alert('An error occurred while searching');
+                });
+            });
+
+            // Sign Out button click event
+            document.getElementById('signout-button').addEventListener('click', function() {
+                alert('Sign Out functionality not implemented yet.');
+            });
+
+            // Profile button click event
+            document.getElementById('profile-button').addEventListener('click', function() {
+                alert('Profile functionality not implemented yet.');
+            });
+
+            // My Devices button click event
+            document.getElementById('devices-button').addEventListener('click', function() {
+                alert('My Devices functionality not implemented yet.');
+            });
+
+            // FAQs button click event
+            document.getElementById('faqs-button').addEventListener('click', function() {
+                alert('FAQs functionality not implemented yet.');
+            });
+
+            // Emergency Contacts button click event
+            document.getElementById('emergency-button').addEventListener('click', function() {
+                alert('Emergency Contacts functionality not implemented yet.');
+            });
+        });
+    </script>
+</body>
+</html>
